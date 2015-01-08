@@ -1,0 +1,21 @@
+working directory clean //all tracked file are non-modified
+
+$ git commit -m 'initial commit'
+$ git add forgotten_file
+$ git commit --amend
+上面的三条命令最终只是产生一个提交，第二个提交命令修正了第一个的提交内容。
+
+git checkout -- <filename> 	//用于恢复未暂存的文件， 已经staged不可用此法恢复。
+
+git remote -v //list all remote repository
+		// -v :: verbose
+
+git不保存差异文件， 保存的是文件快照
+
+HEAD :: 指向正在工作中的本地分支的指针
+
+修复冲突的方法
+	git status 
+然后编辑 冲突文件
+
+

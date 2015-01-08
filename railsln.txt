@@ -1,0 +1,6 @@
+You need to mind the private/protected range for each method.
+If some method unexpected undergone with "private" label, it cannot use in public range of course.
+
+Local View Files Name started with _(underline)
+
+Maybe I should carefully to inspect plural form of Nouns 

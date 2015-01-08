@@ -1,0 +1,4 @@
+forward //transparent to client
+redirect// server return 301/302,and client visit new uri
+Non-threadscale-security//be cautious to class variable
+

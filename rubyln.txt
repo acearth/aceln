@@ -1,0 +1,25 @@
+
+
+require 'time'
+Time.now.rfc2822 # output time formated like mail-header
+
+>> Time.parse("201301031929")
+=> 2013-01-03 19:29:00 +0800
+
+proc class :: block and context objectized -->process object
+
+& parameter in Proc call
+procname=Proc.new do|params|
+	asdfasdf
+end
+procname.call(p1,..pn)
+procname[p1,..,pn]
+
+proc = Proc.new 
+
+closure:: objects which have var/processing content and other environment, like proc object
+
+prc.arity 	# return argument number of call method
+
+
+

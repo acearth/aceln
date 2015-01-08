@@ -1,0 +1,94 @@
+//C   delete char until line end
+R   replace like insert in windows
+X   delete char before cursor
+i   insert at line head
+
+insert number parameter should before i/a
+
+try to use H/M/L to move cursor line
+^ 	go to the first non-blank place of this line 
+
+( 	head of this statment
+) 	head of next statement
+
+{ 	head of the paragraph
+} 	head of next paragraph
+	# paragraph:: non-blank line before next blank line
+	   :: can be define by settings.
+
+, 	contray to ';', but i have to type twice because ',' has been mapped to leader.
+
+gg=top
+G=bottom  #last line of the file.
+`` 	the last referred place by 'G' or 'gg', or modified place.
+`` 	go to last marker or context(?)//?
+
+$ view fileName  # only read fileName
+
+$ vi -r [filename] # recover buffer [for filename]
+
+named buffer for yank and delete
+Usage:
+"*yw "*yy "*dw  ->"*p
+
+Q: how to stop highlight matching results?
+
+marker add
+m*
+marker use
+'* # go to first char of corresponding line
+`* # go to corresponding place exactly
+'' head of the last marker or context
+`` last marker or context place exactly
+
+#----------------EX mode  -------------------
+:= 	#line number total
+:.= 	#line number of the current line
+
+#----------------EX mode  -------------------
+
+page 65 of the book
+
+:.,$d 	delete all lines from current line to end of file
+:%d 	delete all lines
+
+:100;+5 p 	print the line from 100-105,  notice the semicolon
+
+:g/pattern/p 	show all matched results on command window
+
+:.,$w newfilename 	make curr to bottom to new file 
+
+:.,$w>>in  in must exists
+
+% current file
+# blocked file
+
+\(RESERVED\):: anything between\( and \) will be reserved as \1,..\9
+
+\<WORD\>:: word
+~ 	last used pattern ::vi feature, no for vim(?)ïï, should be treated as deprecated;
+& 	for delegate matched text,usage example: :s/put/&t>g/
+
+~ 	also can be used as matched text.such as %/his/their   %/her/~
+:%&g 	repeat replace on every line by using last replacing method
+:~ 	like &, but using last Regexp for replacing.
+	:s/red/blue
+	:/green
+	:~  #== :s/green/blue
+
+:g/^$/d 	used for deleting all blank lines
+::NOTICE:: on vi/vim learning PDF:page 88,there are some template for global replacing exercises.
+		Page173, extended Regexp infomation
+:s/./\L&/g 	make all char on this line in lower case,[.]match to every char and [g] ensure operation effective on every char
+:r !<cmd>  	read some command subsequence and load it on buffer
+SCRIPT:=file which contains executable command
+
+
+
+
+
+
+
+
+
+
