@@ -18,4 +18,13 @@ HEAD :: 指向正在工作中的本地分支的指针
 	git status 
 然后编辑 冲突文件
 
+使用git://github.com/al5hn/name.git 方式遇到错误. 
+	被建议使用https访问。  有人说git协议不支持push（因为使用过git clone）
+
+
+过去我经常使用 
+	git push 远程分支名 本地分支名 
+的方式推送本地更新，但如果使用 git push -u 远程分支名 本地分支名
+的方式更新,以后就可以直接使用git push完成更新了。  其中-u用于指定upstream。
+
 

@@ -1,0 +1,17 @@
+When I installed Archlinux on my notebook which had been installed win7, I reboot the computer. But the GRUB interface is only one option, just for arch.
+I resolved this problem by do operation below:
+	pacman -S os-prober
+	grub-mkconfig -o /boot/grub/grub.cfg
+And  win7 appear again on GRUB startup interface.
+
+
+Add swap area
+1. fdisk /dev/sda
+1.1 create new area for swap
+2. sudo mkswap /dev/sda[1-9]
+2.1 sudo swapon /dev/sda[1-9]
+3. verify
+3.a free
+3.b swapon -s
+
+
