@@ -5,3 +5,7 @@ Non-threadscale-security//be cautious to class variable
 Get Method only has a header, no body.
 Post Method has a body for loading message.
 
+idempotence: repeated action==single action (from effection view)
+
+initParameter <- should be treated as deploytime constant parameter.
+
