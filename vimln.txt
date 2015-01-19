@@ -47,14 +47,28 @@ marker use
 
 #----------------EX mode  -------------------
 
-page 65 of the book
+page 65 of the book(O'Reilly)
+
 
 :.,$d 	delete all lines from current line to end of file
 :%d 	delete all lines
 
 :100;+5 p 	print the line from 100-105,  notice the semicolon
+	#I've seen that the result is same as 100,+5p ; may be i ignored something.  QQQQ
+
+:$  <--stands for the last line of the file
+
+:<range>normal <external cmd> := execute external command on range
+
+:t ==:copy
+:m==:move
+
+@:  repeqt last ex-mode cmd
+@@  repeat the last @-command(i.e. MACRO)
 
 :g/pattern/p 	show all matched results on command window
+in ex-mode, ^r^w can yank the word cursored to the command line
+q:  <-- in normal mode, open command history window, can be modified for reuse
 
 :.,$w newfilename 	make curr to bottom to new file 
 
@@ -85,7 +99,10 @@ SCRIPT:=file which contains executable command
 
 
 
-
+wildmode <<  set wildmode for auto-completion.
+	on zshell, a example is 
+		set wildmenu
+		set wildmode=full
 
 
 
