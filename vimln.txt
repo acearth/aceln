@@ -56,7 +56,7 @@ page 65 of the book(O'Reilly)
 :100;+5 p 	print the line from 100-105,  notice the semicolon
 	#I've seen that the result is same as 100,+5p ; may be i ignored something.  QQQQ
 
-:$  <--stands for the last line of the file
+:$  <-- stands for the last line of the file
 
 :<range>normal <external cmd> := execute external command on range
 
