@@ -8,11 +8,13 @@ insert number parameter should before i/a
 try to use H/M/L to move cursor line
 ^ 	go to the first non-blank place of this line 
 
-( 	head of this statment
-) 	head of next statement
-
-{ 	head of the paragraph
-} 	head of next paragraph
+-----------------------------
+| ( | head of this statement |
+| ) | head of next statement |
+|---+------------------------| 
+| { | head of the paragraph  |
+| } | head of next paragraph |
+-----------------------------
 	# paragraph:: non-blank line before next blank line
 	   :: can be define by settings.
 
