@@ -22,6 +22,8 @@ try to use H/M/L to move cursor line
 
 gg=top
 G=bottom  #last line of the file.
+ge <-- the end of the prior word
+W B E gE <-- treat as long word<string> 
 `` 	the last referred place by 'G' or 'gg', or modified place.
 `` 	go to last marker or context(?)//?
 
