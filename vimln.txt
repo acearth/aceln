@@ -2,11 +2,20 @@
 R   replace like insert in windows
 X   delete char before cursor
 i   insert at line head
+#|motion| <-- a command that moves the cursor
+gg=top
+G=bottom  #last line of the file.
+ge <-- the end of the prior word
+W B E gE <-- treat as long word<string> 
+`` 	the last referred place by 'G' or 'gg', or modified place.
+`` 	go to last marker or context(?)//?
+, 	contray to ';', but i have to type twice because ',' has been mapped to leader.
+H/M/L   move cursor line
+^ 	go to the first non-blank place of this line 
+#==
+
 
 insert number parameter should before i/a
-
-try to use H/M/L to move cursor line
-^ 	go to the first non-blank place of this line 
 
 -----------------------------
 | ( | head of this statement |
@@ -18,17 +27,7 @@ try to use H/M/L to move cursor line
 	# paragraph:: non-blank line before next blank line
 	   :: can be define by settings.
 
-, 	contray to ';', but i have to type twice because ',' has been mapped to leader.
-
-gg=top
-G=bottom  #last line of the file.
-ge <-- the end of the prior word
-W B E gE <-- treat as long word<string> 
-`` 	the last referred place by 'G' or 'gg', or modified place.
-`` 	go to last marker or context(?)//?
-
 $ view fileName  # only read fileName
-
 $ vi -r [filename] # recover buffer [for filename]
 
 named buffer for yank and delete
@@ -36,23 +35,13 @@ Usage:
 "*yw "*yy "*dw  ->"*p
 
 Q: how to stop highlight matching results?
+A1: :noh
 
-marker add
-m*
-marker use
-'* # go to first char of corresponding line
-`* # go to corresponding place exactly
-'' head of the last marker or context
-`` last marker or context place exactly
-
-#----------------EX mode  -------------------
+#|ex-mode| <--also called command mode
 := 	#line number total
 :.= 	#line number of the current line
 
-#----------------EX mode  -------------------
-
 page 65 of the book(O'Reilly)
-
 
 :.,$d 	delete all lines from current line to end of file
 :%d 	delete all lines
@@ -64,7 +53,7 @@ page 65 of the book(O'Reilly)
 
 :<range>normal <external cmd> := execute external command on range
 
-:t ==:copy
+:t==:copy
 :m==:move
 
 @:  repeqt last ex-mode cmd
@@ -72,14 +61,50 @@ page 65 of the book(O'Reilly)
 
 :g/pattern/p 	show all matched results on command window
 in ex-mode, ^r^w can yank the word cursored to the command line
-q:  <-- in normal mode, open command history window, can be modified for reuse
-
-:.,$w newfilename 	make curr to bottom to new file 
+q:  <-- in normal mode, open ex-command history window, can be modified for reuse :.,$w newfilename 	make curr to bottom to new file 
 
 :.,$w>>in  in must exists
+#==
 
+#object <-- text objects, used in visual mode and operator pending mode
+#see more at':h object'
+ ca(  vi'
+#==
+
+#mark
+:h mark-motions
+`` == ^o //return to the last location before jump
+
+m[char]  marker add
+marker use
+'[char] # go to first char of corresponding line
+`[char] # go to corresponding place exactly
+'' head of the last marker or context
+`` last marker or context place exactly
+m[UPPERchar] use Upper Case to mark global mark
+:marks marks list
+#==
+
+#macro
+q[char]	record marco, and then quit by press 'q'
+	[char] is named register, may be collide with other register used for edit
+@[char] used for execute recorded macro
+
+[count]@[char]  execute macro in [count] times, !!need and 'j' or other motion to make macro can move.
+:[range]normal @[char]  PARALLEL @[char] select region at first, then execute macro in parallel way.
+
+:[range]normal @[char]  execute macro on range
+:argdo normal @[char] execute macro on many files
+##one example for numbering lines##
+;let i=0
+qa
+I<C-r>=i<CR>)<ESC>
+:let i+=1
+q
+##
+#==
 % current file
-# blocked file
+'#' blocked(alternate) file
 
 \(RESERVED\):: anything between\( and \) will be reserved as \1,..\9
 
@@ -110,6 +135,44 @@ wildmode <<  set wildmode for auto-completion.
 
 
 
+#plugin <--useful plugins for vim
+macros/matchit.vim --> used for jumping from matched open mark(such as 'if') and closed mark(such as 'end')
+		   --> :h matchit-install
 
+surround.vim --> used for surround the selection with a pair of marks.
+	     --> e.g. S'
+
+vim-bundler.vim --> generate path automatically by Gemfile
+
+
+#==
+
+#jump <-- jump among files
+
+:jumps  show list of jumps action
+^o <-- go back to hidden file
+^i <-- go forward to hidden file
+^^ <-- turn to alternate file
+:changes  changes have made to every buffer
+gf  go to the file under the cursor, may be need to set suffixesadd
+
+
+#==
+
+#pattern <-- string matching, find, and substitute
+\c[pattern] ignoring case
+
+\v activate VERY MAGIC search mode, assumed that [0-9][a-zA-z][_] are normal char, any other char has a special meaning.
+\V make string keep original meaning
+
+/\v<(w+)_s+\1> matching pattern for repeated word
+_s ::space or <CR>
+
+#==
+
+Notice:
+` always direct to rightdown, so it can closed with another '`'.   
+' single quoto
+If you want to edit many file in one time, it's best to 'set hidden'
 
 
