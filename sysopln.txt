@@ -15,3 +15,25 @@ Add swap area
 3.b swapon -s
 
 
+Shell首先执行/etc/profile中的命令，为系统所有bash也难怪乎建立默认特征。部分版本的profile执行/etc/pro=file.d下的*.sh文件。
+
+然后依次查找.bash_profile、.bash_login、.profile。
+交互式非登陆shell执行~/.bashrc中的命令。默认的~/.bashrc调用/etc/bashrc
+. /SOURCE 在当前shell中运行启动文件
+
+开发过程中，可在#！…后加行-x打开调试
+dirs #->dir stac
+pushd popd
+
+set –o vi  用vi 编辑命令行
+
+shopt –s cdspell 修正cd时的大小写错误
+zsh下列出可执行文件
+ls *(*)
+(*) ::globbing 表达式：：后缀修饰符 for executable
+ls *([xrw])
+
+
+
+
+
