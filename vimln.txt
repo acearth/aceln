@@ -163,7 +163,12 @@ gf  go to the file under the cursor, may be need to set suffixesadd
 \c[pattern] ignoring case
 
 \v activate VERY MAGIC search mode, assumed that [0-9][a-zA-z][_] are normal char, any other char has a special meaning.
-\V make string keep original meaning
+\V very nomagic search mode::make string keep original meaning
+:h /\<  :look helpfile for "/<"
+/\v"[^"]+" ::match one or more chars except(")
+/\v"\zs[^"]+\ze" :: like the example upon, but quote mark is excluded,but (") is key component of this match.
+
+
 
 /\v<(w+)_s+\1> matching pattern for repeated word
 _s ::space or <CR>
