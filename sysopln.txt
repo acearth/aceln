@@ -32,6 +32,7 @@ zsh下列出可执行文件
 ls *(*)
 (*) ::globbing 表达式：：后缀修饰符 for executable
 ls *([xrw])
+ls *(.c|.txt) 列出所有的.c或者.txt文件,在bash下应为 *+(.c|.txt),待尝试
 
 
 
