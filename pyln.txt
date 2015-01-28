@@ -1,3 +1,48 @@
 itergral division in py3:
 	3//2 #=>1
 	3/2 #=1.5
+
+reload(<<module>>)  reload modules again to make module run again.
+
+use namespace to minimize naming collision, occurred as a object has attributes. Every module file is a namespace.
+
+object ::a set of data and operation on it(data)
+弱类型： 可以将一块内存内容视为不同的类型，如C/C++
+强类型：Python,如果一块内存为字符串，那么无法对其求和（字符串无法与数字求和）
+slice操作： string[#head:#tail]
+分片表达式赋值前会创建拷贝
+You can't change  string contents(i.e. str[i]='char'), but you can (str='char'+str_new)
+
+dictionary :: D={'key':'value',:::}
+tuple:: T=(1,2,3,4,,,)
+list:: L=[1,2,'asdf',,,]
+'//' ::floor division, 解决除法结果取决于操作内型而产生不同结果的问题，避免使python作为动态语言变得难以预料
+
+'/':: true division
+0b[1][0][...] 二进制数字
+变量名实质上是指向对象内存空间的指针
+例子1
+a=3
+b=a
+那么a=3,b=3
+然后例子1.1
+a='stringa'
+那么a='stringa',b=3
+由于整数/字符串是不可改变类型，赋值时实际创建了新对象
+
+x==y 是否有相同的值
+x is y 是否同一个对象,只比较实现引用的指针
+
+
+零字符不会中断字符串
+使用字符串需要注意转义，'c:\new\text.txt'中\n,\t都会被转义，可以使用r'c:\new\text.txt'来转义,或者使用\\
+
+三重字符串""" ......"""，在换行处嵌入了\n。 可用作多行注释
+
+
+
+
+
+
+
+
