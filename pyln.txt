@@ -11,6 +11,8 @@ object ::a set of data and operation on it(data)
 强类型：Python,如果一块内存为字符串，那么无法对其求和（字符串无法与数字求和）
 slice操作： string[#head:#tail]
 分片表达式赋值前会创建拷贝
+赋值操作总是存储对象的引用，而非对象的拷贝
+
 You can't change  string contents(i.e. str[i]='char'), but you can (str='char'+str_new)
 
 dictionary :: D={'key':'value',:::}
