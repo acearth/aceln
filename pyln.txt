@@ -59,10 +59,21 @@ log=open('name.txt','w')
 print >> log, CONTENT
 log.close()
 
+使用print string, 以保证输出在同一行上。
+
+all(a,b,c) ａｂｃ全ｔｒｕｅ则ｔｒｕｅ 
+any(a,b,c) ａｂｃ有一个ｔｒｕｅ则ｔｒｕｅ 
 
 
+zip(la,lb)　用于将la lb联合起来并行遍历，可以用于制作字典。
+对列表解析的解释不够详细
 
+dict(zip(li1,li2))　将列表对象返回字典
+无返回值的函数自动返回none对象
 
+python不能区分同名函数与变量，如open
+
+global x=3;　在函数中将ｘ定义为全局变量
 
 
 
