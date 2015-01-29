@@ -41,6 +41,25 @@ x is y 是否同一个对象,只比较实现引用的指针
 
 三重字符串""" ......"""，在换行处嵌入了\n。 可用作多行注释
 
+try except else 
+	首先使用try测试是否条件，如果有异常就执行except，否则没有异常，就执行else语句。
+
+range(#N) #=> 0,1,2,...,N-1，一般用于循环
+
+python对象无法在原处改变，故无自增自减运算
+
+重定向输出流
+import sys
+sys.stdout=open('name.txt','a')
+print xxx
+sys.stdout.close()
+
+使用 print>> 到对象
+log=open('name.txt','w')
+print >> log, CONTENT
+log.close()
+
+
 
 
 
