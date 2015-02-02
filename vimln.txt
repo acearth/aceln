@@ -27,7 +27,7 @@ insert number parameter should before i/a
 	# paragraph:: non-blank line before next blank line
 	   :: can be define by settings.
 
-$ view fileName  # only read fileName
+//$ view fileName  # only read fileName
 $ vi -r [filename] # recover buffer [for filename]
 
 named buffer for yank and delete
@@ -48,21 +48,15 @@ page 65 of the book(O'Reilly)
 
 :100;+5 p 	print the line from 100-105,  notice the semicolon
 	#I've seen that the result is same as 100,+5p ; may be i ignored something.  QQQQ
-
 :$  <-- stands for the last line of the file
-
 :<range>normal <external cmd> := execute external command on range
-
 :t==:copy
 :m==:move
-
 @:  repeqt last ex-mode cmd
 @@  repeat the last @-command(i.e. MACRO)
-
 :g/pattern/p 	show all matched results on command window
 in ex-mode, ^r^w can yank the word cursored to the command line
 q:  <-- in normal mode, open ex-command history window, can be modified for reuse :.,$w newfilename 	make curr to bottom to new file 
-
 :.,$w>>in  in must exists
 #==
 
@@ -92,7 +86,6 @@ q[char]	record marco, and then quit by press 'q'
 
 [count]@[char]  execute macro in [count] times, !!need and 'j' or other motion to make macro can move.
 :[range]normal @[char]  PARALLEL @[char] select region at first, then execute macro in parallel way.
-
 :[range]normal @[char]  execute macro on range
 :argdo normal @[char] execute macro on many files
 ##one example for numbering lines##
@@ -168,14 +161,12 @@ gf  go to the file under the cursor, may be need to set suffixesadd
 /\v"[^"]+" ::match one or more chars except(")
 /\v"\zs[^"]+\ze" :: like the example upon, but quote mark is excluded,but (") is key component of this match.
 
-
-
 /\v<(w+)_s+\1> matching pattern for repeated word
 _s ::space or <CR>
 
 #==
 
-Notice:
+#Notice:
 ` always direct to rightdown, so it can closed with another '`'.   
 ' single quoto
 If you want to edit many file in one time, it's best to 'set hidden'
