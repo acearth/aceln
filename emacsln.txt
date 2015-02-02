@@ -9,4 +9,7 @@ p37  :: first conclusion for quick control
 word search :^s<CR>^w word
 incsearch: ^s ||^r(back)
 
+<<sed&awk>> Dale, O'Reilly published::RegExp
+Ispell is more powerful than spell(UNIX)
+
 
