@@ -59,8 +59,37 @@ log=open('name.txt','w')
 print >> log, CONTENT
 log.close()
 
+使用print string, 以保证输出在同一行上。
+
+all(a,b,c) ａｂｃ全ｔｒｕｅ则ｔｒｕｅ 
+any(a,b,c) ａｂｃ有一个ｔｒｕｅ则ｔｒｕｅ 
 
 
+zip(la,lb)　用于将la lb联合起来并行遍历，可以用于制作字典。
+对列表解析的解释不够详细
+
+dict(zip(li1,li2))　将列表对象返回字典
+无返回值的函数自动返回none对象
+
+python不能区分同名函数与变量，如open
+
+global x=3;　在函数中将ｘ定义为全局变量
+
+
+对于多层嵌套的工厂函数，使用时要从外部传入参数，一层层传入.如
+def m1(n1):
+	def m2(n2):
+		def m3(n3):
+			return n3*n2*n1
+		return m3
+	return m2
+可以使用p=m1(3),q=p(5), q(11)调用m3.
+
+return x,y #->这里实际返回了(x,y)，但是括号被省略了。
+关键字参数：通过变量名匹配参数，而不是通过位置顺序（默认为此）
+
+def func(**args)   At there, only dict.key.param is valid
+ 
 
 
 
