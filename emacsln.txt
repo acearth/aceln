@@ -12,4 +12,7 @@ incsearch: ^s ||^r(back)
 <<sed&awk>> Dale, O'Reilly published::RegExp
 Ispell is more powerful than spell(UNIX)
 
+^x [count] 垂直方向分割成count个窗口
+^x o 切换活动窗口
+
 
