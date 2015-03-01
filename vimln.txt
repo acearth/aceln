@@ -13,10 +13,7 @@ W B E gE <-- treat as long word<string>
 H/M/L   move cursor line
 ^ 	go to the first non-blank place of this line 
 #==
-
-
 insert number parameter should before i/a
-
 -----------------------------
 | ( | head of this statement |
 | ) | head of next statement |
@@ -41,7 +38,7 @@ A1: :noh
 := 	#line number total
 :.= 	#line number of the current line
 
-page 65 of the book(O'Reilly)
+page 65 of the book(O'Reilly) ::regular expression
 
 :.,$d 	delete all lines from current line to end of file
 :%d 	delete all lines
@@ -119,14 +116,10 @@ q
 :r !<cmd>  	read some command subsequence and load it on buffer
 SCRIPT:=file which contains executable command
 
-
-
 wildmode <<  set wildmode for auto-completion.
 	on zshell, a example is 
 		set wildmenu
 		set wildmode=full
-
-
 
 #plugin <--useful plugins for vim
 macros/matchit.vim --> used for jumping from matched open mark(such as 'if') and closed mark(such as 'end')
@@ -136,7 +129,6 @@ surround.vim --> used for surround the selection with a pair of marks.
 	     --> e.g. S'
 
 vim-bundler.vim --> generate path automatically by Gemfile
-
 
 #==
 
@@ -148,7 +140,6 @@ vim-bundler.vim --> generate path automatically by Gemfile
 ^^ <-- turn to alternate file
 :changes  changes have made to every buffer
 gf  go to the file under the cursor, may be need to set suffixesadd
-
 
 #==
 
@@ -170,6 +161,4 @@ _s ::space or <CR>
 ` always direct to rightdown, so it can closed with another '`'.   
 ' single quoto
 If you want to edit many file in one time, it's best to 'set hidden'
-
-
 

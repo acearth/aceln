@@ -34,6 +34,7 @@ ls *(*)
 ls *([xrw])
 ls *(.c|.txt) 列出所有的.c或者.txt文件,在bash下应为 *+(.c|.txt),待尝试
 
+unset <varName> 取消已定义的变量
 
 
 

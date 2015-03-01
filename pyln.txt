@@ -89,10 +89,24 @@ return x,y #->这里实际返回了(x,y)，但是括号被省略了。
 关键字参数：通过变量名匹配参数，而不是通过位置顺序（默认为此）
 
 def func(**args)   At there, only dict.key.param is valid
+
+一个函数副作用的例子
+list=[1,2,3]
+list=list.append(4)
+print list #=>None
+cf. CHAPTER14 常见函数的陷阱
  
+NNQ:=>notion of name qualification::其实是表达式，传回和对象匹配的属性名的值
 
+reload会影响所有使用import读取了模块的客户端。因为使用import的客户端需要通过NNQ。重载后会发现模块对象中有了新值。
 
+对用使用from的客户端，只会影响之后的对象，之前的不会影响。
+from比import多的行为： 从被导入模块中复制一或多个变量到from语句所在的作用域中。这样，才可以直接使用被导入的变量名，而不是module.name。
 
+from的问题：
+	1)变量含义模糊，难以确定是那个模块定义的;
+	2)reload调用时不能更新；
+	3）破坏命名空间，可能会悄然覆盖正在作用域的变量名
+form * 更会严重污染命名空间，宜少用。
 
-
-
+重载::在对象树(类树）的
