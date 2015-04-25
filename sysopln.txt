@@ -25,6 +25,7 @@ Shell首先执行/etc/profile中的命令，为系统所有bash也难怪乎建�
 dirs #->dir stac
 pushd popd
 
+命令行编辑功能通过Readline库实现(C语言):
 set –o vi  用vi 编辑命令行
 
 shopt –s cdspell 修正cd时的大小写错误
@@ -35,6 +36,13 @@ ls *([xrw])
 ls *(.c|.txt) 列出所有的.c或者.txt文件,在bash下应为 *+(.c|.txt),待尝试
 
 unset <varName> 取消已定义的变量
+
+
+var=[value] 这里等号两端不能有空格(shell), 若value含有空格，需加引号。
+连接变量时，需要双引号，如： "$a $b"
+
+set -x 打开追踪命令功能 +x 关闭
+
 
 
 

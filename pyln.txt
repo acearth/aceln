@@ -10,7 +10,7 @@ object ::a set of data and operation on it(data)
 弱类型： 可以将一块内存内容视为不同的类型，如C/C++
 强类型：Python,如果一块内存为字符串，那么无法对其求和（字符串无法与数字求和）
 slice操作： string[#head:#tail]
-分片表达式赋值前会创建拷贝
+分片表达式赋值前会创建拷贝。 这样可以避免修改多个共享对象的引用修改一个对象时产生的不一致问题。
 赋值操作总是存储对象的引用，而非对象的拷贝
 
 You can't change  string contents(i.e. str[i]='char'), but you can (str='char'+str_new)
@@ -110,3 +110,44 @@ from的问题：
 form * 更会严重污染命名空间，宜少用。
 
 重载::在对象树(类树）的
+
+
+列表处理代码->suite
+
+
+IDE: wingWare Python IDE
+WebFrameWork :: django zope web2py pylons
+ORM:: object relational mapper:: SQL Alchemy   
+脚本：一个顶层程序文件的非正式说法
+a=y if x else z   eq. to { if x: a=y; else a=z}
+zip 适用于构造字典
+
+为避免修改函数中可变参数的修改，可以对参数进行拷贝，如def f（a,b):  b=b[:]
+
+and::若不存在假值，返回最后一个真值, 否则返回第一个假值。
+or:: 返回第一个真值，若不存在，则返回假
+生成器表达式大体上可以认为是对内存空间的优化：不像列表解析，需要一次性构造出整个列表。 实际运行略慢，对大集合来说可能是最优选择。
+
+import 和from是赋值语句。 
+	import将整个模块对象赋值给一个变量名
+	from将若干个变量名赋值到另一个模块中的同名对象。
+		
+python包： 
+顶层目录是容器，无需__init__.py，但需要被列入查找路径Pythonpath中。其下的子目录若需要被查找到，其中必须含有——init--.py。再包被导入时，--init--会被运行。
+
+
+class Sub(Parent1,Parent2):...
+模块是对象，  类是模块内的属性。
+
+类中的运算符截获方法： --mul-- *    --add-- + //相当于重载
+self 引用在python方法中必须列出的原因之一： 方法可以独立于类之外，表现为一个简单函数。因此，必须让隐含的实例参数明确化才行。
+
+--slot-- =[attr1,'attr2'..]
+这里可以用来限定实例类型，防治未赋值即使用和打字错误
+
+decorator@
+@parent
+
+with ... as variable
+example: with open(fileName) as myfile:
+	with Function1() as f1:

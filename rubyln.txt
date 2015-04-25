@@ -22,4 +22,7 @@ closure:: objects which have var/processing content and other environment, like 
 prc.arity 	# return argument number of call method
 
 
+ruby  不会对单引号字串进行插值操作('#{foo} bar' =>"\#{foo} bar"
+单引号字串：： 仅仅是字面值，只包括输入的符号。 能避免元字符转义问题
 
+!!<objName> 将对象取两次反，得到布尔值。 ! 读作 bang 

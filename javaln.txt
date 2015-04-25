@@ -1,0 +1,28 @@
+java 主类名可以与文件名不同，在命令行执行时,会自动java <MAINCLASS NAME>
+
+instance varibles  在类中声明，表示对象的状态
+local varibles 在方法中声明，表示局部值
+Arr[] arr=new Arr[x];
+这里仅声明了Arr的引用变量，并未创建对象。需要arr[i]=new Arr()来显式创建对象
+
+封装：添加访问控制，实现数据隐藏
+
+实例变量认初始化为0/false/null，局部变量必须在使用前初始化。
+继承设计的判断：x继承自y：  X IS-A Y  ->意味着x可以做y能做的任何事情
+不能在非抽象类中含有抽象方法
+java 构造器可以使用仅有参数顺序不同的参数列表来重载函数
+构造时，由子类开始压栈，压到栈顶后开始执行，并退栈。首先执行的父类的构造器。 #小孩能在父母之前出生吗 
+super();   #d调用父类的构造器
+常数变量名应该全部大写 public static final <type> NAME= <value>;
+"+" --java中唯一重载过的运算符
+
+RMI
+需要1.接口，2.接口的实现；3.server；4.client
+步骤
+	1.javac *.java
+	2.rmic InterfaceImpl
+	3.rmiregistry&
+	4.java server
+	5.java client
+
+

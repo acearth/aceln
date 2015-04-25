@@ -1,0 +1,4 @@
+NOTE: this text contains some disordered record of my learning.
+
+cmd+r__iterm  clear screen
+

@@ -4,3 +4,9 @@ If some method unexpected undergone with "private" label, it cannot use in publi
 Local View Files Name started with _(underline)
 
 Maybe I should carefully to inspect plural form of Nouns 
+
+对测试添加进度颜色
+	require 'minitest/reporters'
+	Minitest::reporters.use!
+
+

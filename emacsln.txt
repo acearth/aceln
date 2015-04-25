@@ -5,6 +5,7 @@ p37  :: first conclusion for quick control
 句子：除文档结尾外，  距离最后一个标点符号至少有两个空格。
 ^x^t  将当前行与上一行交换位置。
 
+mA/mE 切换行
 ^g  放弃当前命令
 word search :^s<CR>^w word
 incsearch: ^s ||^r(back)
