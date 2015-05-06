@@ -1,7 +1,7 @@
 working directory clean //all tracked file are non-modified
 
 $ git commit -m 'initial commit'
-$ git add forgotten_file
+$ git add forgotten_file //此时只是更新了索引,并不创建树对象
 $ git commit --amend
 上面的三条命令最终只是产生一个提交，第二个提交命令修正了第一个的提交内容。
 
@@ -27,4 +27,17 @@ HEAD :: 指向正在工作中的本地分支的指针
 的方式推送本地更新，但如果使用 git push -u 远程分支名 本地分支名
 的方式更新,以后就可以直接使用git push完成更新了。  其中-u用于指定upstream。
 
-git log -p [fileName] //查看文件的提交记录
+git log -p [fileName] //查看文件的提交记录, 加上p则能显示变更内容
+		      //不加p 选项则显示提交记录
+
+git rm --cached [file]  //将文件从暂存变更为未暂存
+git checkout -- [file]  //将文件回复为最后一次的状态，即使该文件已被删除。
+git show [branch]~[#rseq] //显示分支的倒数rseq次提交
+git show [branch]^[#i] //显示分支的第i个父节点
+git reset  将版本库和目录变为指定状态。如
+	git reset HEAD^ 将当前状态变为最新提交的父提交
+	    	  --soft 索引和文件都不会变，只是返回到提交图以前的位置，但是相当于使用了git add
+		  --mixed 默认选项，改变索引为提交前的状态，但是工作目录不变。相当于在上次提交后新建了文件，但是没有添加索引(git add <file>)
+		  --hard 修改索引和文件。
+
+git reflog 显示版本库中引用（索引？）变化的历史记录。其hash值可用于git reset 到指定提交
