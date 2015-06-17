@@ -31,3 +31,7 @@ find /opt -type f
 #在/opt目录及其子目录下查找文件大于10M的文件 
 find /opt -size +10000k 
 
+
+将内容重定向到文件描述符，在描述符前加&:
+echo "something" >&2
+

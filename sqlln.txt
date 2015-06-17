@@ -1,0 +1,7 @@
+# remote access
+sysql -h thinix -u root -p 
+
+#setting for privileges
+GRANT ALL PRIVILEGES ON [dbName].[tableName] TO '[userName]'@'hostName.ipv4' IDENTIFIED BY '[password]' WITH GRANT OPTION; 
+
+

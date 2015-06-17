@@ -1,0 +1,11 @@
+sed G fileName
+	# add blank line in file
+sed '$!G' file
+
+sed = fileName | sed 'N; s/\n/ /g'
+	#add line number
+
+sed 's/<[^>]*>//g'
+	# delete lines have '< -- >'
+
+

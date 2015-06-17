@@ -41,3 +41,6 @@ git reset  将版本库和目录变为指定状态。如
 		  --hard 修改索引和文件。
 
 git reflog 显示版本库中引用（索引？）变化的历史记录。其hash值可用于git reset 到指定提交
+
+git instaweb --httpd=webrick // start web service on port::1234
+git instaweb --httpd=webrick --stop //close
