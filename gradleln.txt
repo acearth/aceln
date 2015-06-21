@@ -1,0 +1,6 @@
+运行一个java程序：
+1 为build.gradle加入以下内容
+apply plugin:'application'
+mainClassName:'pack.age.plus.MainClass.name'
+2 在项目根目录运行
+$ gradle run
