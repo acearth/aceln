@@ -1,5 +1,4 @@
 
-
 require 'time'
 Time.now.rfc2822 # output time formated like mail-header
 
@@ -26,3 +25,138 @@ ruby  不会对单引号字串进行插值操作('#{foo} bar' =>"\#{foo} bar"
 单引号字串：： 仅仅是字面值，只包括输入的符号。 能避免元字符转义问题
 
 !!<objName> 将对象取两次反，得到布尔值。 ! 读作 bang 
+
+#start 20150711
+symbol 可视为轻量级字符串，可与字符串互换，但更有效率
+
+nil ::表示对象不存在
+
+a,b,*c=1,2,3,4,5
+	这里c=[3,4,5]  
+
+unless 与if刚好相反
+until 与while 的判断条件相反 如a==true
+===表示广义相等
+获取对象id
+p objName.object_id
+a.equals?(b) 判断a、b是不是同一个对象
+==判断对象的值是否相同
+for i in start..end  #将遍历包括start、end在内的数值 
+collectionName.each do  # 遍历集合中的元素！！！
+File::open(fileName)   #类方法的另一种调用方式
+def methodName (*varName) 表示参数个数不确定的方法
+
+#20150712
+模块函数： 使用模块名.方法名的形式调用模块定义的方法。
+include 把模块中常量、方法名合并到当前命名空间
+ruby : 单继承
+extend 模块 str.extend(moduleName) 将模块mixin进对象
+多态： 不同对象有不同的消息解释权
+x..y 
+x...y 从x到y的前一个值
+
+rescue=>ex #接受exception量，可用 ex.message打印异常信息
+ensure类似于finally
+rescue
+	sleep 10
+	retry
+end
+ 	# 上述rescue将在异常产生10秒后重新执行begin后的操作
+n=Integer(val) rescue 0 #如果转变类型失败，则 n=0
+
+Usage of Block
+1.
+sorted=arr.sort_by{ |item| item.length}
+2.
+def m1
+	x.times do |i|
+	p yield(i) # leave the controll of i to block, for example, {|j| j**2}  will print 1,1,4,27,256...
+end
+3. 
+block_given?  # if block is given, do sth.
+
+4. 
+def m2(p1,p2,&block)
+	
+	if block
+		block.call(sth)	
+	end
+end
+## &block MUST be the last parameter
+
+COUNTING
+n.times do |i|  ## 0,1,...,n-1
+from.upto(th) do |i| ##from,from+1,...,th-1,th
+from.downto(base) do |i| ## from,from-1,...base+1,base
+from.step(to,step){...}  #step can be negative
+
+Rational(a,b) #a/b
+Array.new(a,b) #=>[b,b,...,b]
+a[i,len]  ##start:i, last=i+len-1
+#collection
+arr=arr1|arr2  
+arr=arr1&arr2  
+arr=arr1-arr2  
+### see below info
+a=[1,2,3]
+b=[2,3,4]
+p a+b #=>1,2,3,2,3,4
+p a|b #=>1,2,3,4
+
+#array as stack,queue
+unshift shift  ## head add/delete
+push pop ##tail add/delete
+first last ## show element
+
+a.concat(b)  # a=a with b
+a+b  # return another array different with a, b
+
+a.collect{|item| ***}
+a.map!{|item| ***}
+##WARNING: can use Array.new(n,[a,b,c]) to initialize a array, the expr will generate n reference to [a,b,c]
+
+#Hash
+{key:value}
+{key=>value}
+h[k]=v
+h.fetch(k)
+he.fetch(k){|k| k**2} #return k*k
+h.empty?
+h.clear #make h be empty
+
+#Regexp
+re=~ str
+
+#IO
+io.sync=true  # writing to buffer will call flush method
+#Encoding
+file head add the line below
+#encoding: utf-8
+
+#Proc
+lambda is another type of proc, but lambda has :
+1) more strict parameter check
+2)  return result 
+one lambda sample 
+	square= ->(n) {return n**2}
+	square[5]  ##must be [i], canNOT be () or noshow
+another
+def power_of(n)
+	lambda do |x|
+		return x**n
+end
+end
+cube=power_of(3)
+p cube.call(5) # 5**3=125
+
+#closure
+def counter
+c=0
+Proc.new do  ## also can be " lambda do "
+c+=1
+end
+end
+c1=counter
+c1.call
+c1.call
+
