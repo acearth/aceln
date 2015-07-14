@@ -160,3 +160,9 @@ c1=counter
 c1.call
 c1.call
 
+#eval
+x=123
+codep="puts x"
+eval codep #=>123
+
+inject类似于reduce
