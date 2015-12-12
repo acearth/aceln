@@ -1,0 +1,15 @@
+val : constant :: only can assign only once.
+var : variable :: type is fixed
+
+statement : for changing state
+expression : for express
+
+Unit :  generated from expression which don't have result
+Componented expression : val is value of last express
+
+imported ClassName can be modified.
+Example :
+	import util.{ Random => Bob}
+	val r= new Bob
+
+
