@@ -15,5 +15,11 @@ Ispell is more powerful than spell(UNIX)
 
 ^x [count] 垂直方向分割成count个窗口
 ^x o 切换活动窗口
+m-X set-variable : set new value
 
-
+<F10> : open options of menu
+^h v : view variable value
+m-; :  add comment
+^x-\ : mark whole buffer
+m-^\ : indent- region
+m-^ : delete indentation ( join this line to upper line ??)
