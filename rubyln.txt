@@ -166,3 +166,8 @@ codep="puts x"
 eval codep #=>123
 
 inject类似于reduce
+
+##programming guide
+do sth if (a..b).include? target
+if x.even?
+

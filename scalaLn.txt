@@ -13,3 +13,32 @@ Example :
 	val r= new Bob
 
 
+
+_ : default value.   wildcard, matches any option which don't matches at above 
+
+val likes final, for variables in val_object, can be reassigned
+
+overlap is invalid in REPL
+
+case class 
+
+method promotion : pass method as function will lead Scala make the method as a function object.
+
+match:: example  
+accept(x:Any):String={
+	x match{
+		case s:String =>"..."
+		case _ => "unknown"
+	}
+}	
+
+If a method defined without "( )", you cannot call it with parenthesis
+If a method defined with parenthesis, it suggestive itself is a method can modify object state.
+
+$tuple._n : index of tuple
+
+type : keyword, to name alias
+
+trait : usually  stands for  unified concept
+
+
