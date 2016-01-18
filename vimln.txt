@@ -169,4 +169,4 @@ If you want to edit many file in one time, it's best to 'set hidden'
 Wed May 27 15:01:21 HKT 2015
 
 :scriptnames  # show the script files vim used
-
+:x # only write if contents changed
